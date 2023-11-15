@@ -374,15 +374,16 @@ while running:
         input("Lastly, you can also combine characters and weapons. For example, entering: C2R1 "+
               "means that you will calculate the odds of getting a featured character three times "+
               "and the weapon you selected on the weapon banner.\n")
-        input("This is all about the 'goal' question, we will now review the rest of the program quickly.")
+        input("This is all you need to know about the 'goal' question, we will now review the rest of the program quickly.")
         input("The next question you get is to enter the number of wishes. This is the number of "+
               "wishes you want to calculate your chances for. For example, if you enter 50, the "+
               "program will calculate your odds of obtaining your goal within 50 wishes.\n")
         input("Next, depending on your goal, the program will ask about your pity for the "+
-              "character banner, the weapon banner or both. It will also ask whether you have "+
-              "a guarantee for your next character.\n")
+              "character banner, the weapon banner or both. Please enter a number."+
+              " It will also ask whether you have "+"a guarantee for your next character.\n")
         input("Finally, the program asks whether you want to see a graph of your chances. This "+
-              "question is pretty straightforward, so with that, this tutorial is complete.\n "+
+              "question is pretty straightforward. Last, but not least: you can quit this program "+
+              "simply by hitting 'enter'.\n"+
               "\n"+"Enjoy!\n")
         tutorial = "no"
         
