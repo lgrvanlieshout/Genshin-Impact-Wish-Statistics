@@ -340,22 +340,30 @@ def chance(goal, wishes=0, character_pity=0, weapon_pity=0, guarantee = "no"):
 # -------------------------- program loop ------------------------------
 
 running = True
-noob = 1
+noob = True
 
 while running:
-    if noob == 1:
-        tutorial = input("Would you like to have a tutorial? (yes/no): ")
-    noob = 0
+    if noob:
+        print("Welcome to this wish chance calculator.The questions you will get "+
+              "(if applicable) to calculate your odds, are:\n"+"\n"+
+              "goal (any character, any weapon, C0, R1, C4R2, etc.):\n"+
+              "number of wishes:\n"+
+              "pity for the character banner:\n"+
+              "guarantee (yes/no):\n"+
+              "pity for the weapon banner:\n"+
+              "Would you like to see a graph of your chances? (yes/no):\n"+"\n"+
+              "The tutorial will explain each question in more detail.")
+        tutorial = input("Would you like to follow the tutorial? (yes/no): ")
+    noob = False
     
     if tutorial == "yes":
-        print("Welcome to the tutorial. You will now be guided step-by-step through" +  
-              " the program. Let's get started.\n" + 
+        print("\n Welcome to the tutorial. You will now be guided step-by-step through" +  
+              " program. Let's get started.\n" + 
               "(hit enter to reveal a new line of the tutorial).")
         input()
-        input("First of all, you will get a question asking what your goal is.")
-        print("It will look like this:")
-        input()
-        input("goal (any character, any weapon, C0, C4R2, etc.):\n")
+        input("The first question is about your goal.")
+        input("You will now be shown all possible entries for this question, "+
+              "hopefully making clear what the question is about.\n")
         input("If you want to know your chances of obtaining your next 5-star character, "+
               "just enter: any character.")
         input("Please do not enter the name of the character, because this program "+
@@ -374,16 +382,22 @@ while running:
         input("Lastly, you can also combine characters and weapons. For example, entering: C2R1 "+
               "means that you will calculate the odds of getting a featured character three times "+
               "and the weapon you selected on the weapon banner.\n")
-        input("This is all you need to know about the 'goal' question, we will now review the rest of the program quickly.")
+        input("This is all you need to know about the 'goal' question, we will now review the "+
+              "rest of the program quickly.\n")
         input("The next question you get is to enter the number of wishes. This is the number of "+
               "wishes you want to calculate your chances for. For example, if you enter 50, the "+
               "program will calculate your odds of obtaining your goal within 50 wishes.\n")
         input("Next, depending on your goal, the program will ask about your pity for the "+
-              "character banner, the weapon banner or both. Please enter a number."+
-              " It will also ask whether you have "+"a guarantee for your next character.\n")
+              "character banner, the weapon banner or both. Your pity is the number of "+
+              "wishes that you have made after obtaining your previous 5-star item. You can"+
+              " check your pity in the wish history in Genshin Impact, or you can use a "+
+              "website as paimon.moe or a similar website to calculate your pity.\n")
+        input("After you get a standard character on a non-standard banner, you are guaranteed "+
+              "that the next 5-star is the featured 5-star character. This question asks "+
+              "whether this is the case or not.\n")
         input("Finally, the program asks whether you want to see a graph of your chances. This "+
-              "question is pretty straightforward. Last, but not least: you can quit this program "+
-              "simply by hitting 'enter'.\n"+
+              "question is pretty straightforward.\n Last, but not least: you can quit this program "+
+              "simply by hitting 'enter' as answer to a question.\n"+
               "\n"+"Enjoy!\n")
         tutorial = "no"
         
