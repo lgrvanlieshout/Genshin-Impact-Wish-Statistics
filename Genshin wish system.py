@@ -2,18 +2,25 @@
 """
 Created on Wed Oct 18 11:11:47 2023
 
-@author: Levi van Lieshout, also known as Togira_ on HoyoLab
+@author: Levi van Lieshout (Netherlands), also known as Togira_ on HoyoLab
+
+You can edit, implement, store, sell, whatever you want to do with this code, 
+as long as you credit me properly. 
+Also, I would love to hear it if you are some Genshin assisting website such 
+as paimon.moe, genshin.hotgames.gg, genshin optimizer, etc. and you want to 
+add a wishing chance calculating feature to your website.
+
+The mathematical basis of this code is explained in this article on HoYoLab: 
+    ...
+
+If you have any questions regarding this program, you can e-mail me on:
+    165093adriestarleerling.nl@gmail.com
+
+
 """
 
 import matplotlib.pyplot as plt
 
-
-# -------------- IMPORTANT: FILL THESE IN --------------------------
-
-wishes = 400
-pity = 0
-
-# ------------------------------------------------------------------
 
 
 
@@ -24,9 +31,7 @@ p_C0_list = []
 p_w_pity_list = []
 p_w_list = []
 
-# ------------------------------------------------------------------
-
-
+# --------------------- construct drop chance lists ------------------------
 
 # create list of drop chance of 5-star characters
 drop_chance = [0]
@@ -49,7 +54,7 @@ drop_chance_w.append(1)
 
 #---------------------- function definitions character banner -----------------------
 
-# pulling distribution functions of getting a 5-star character for the first time
+# pulling distribution functions of getting a 5-star character for the first time at pull a
 
 def p(a, pity=0):
     if type(a) == int:
@@ -264,7 +269,7 @@ def chance(goal, wishes=0, character_pity=0, weapon_pity=0, guarantee = "no"):
         for i in range(a+1):
             p_C0_pity_list.append(p_C0(i, character_pity))
 
-        if pity == 0:
+        if character_pity == 0:
             p_C0_list = p_C0_pity_list
         else:
             p_C0_list = []
@@ -276,7 +281,7 @@ def chance(goal, wishes=0, character_pity=0, weapon_pity=0, guarantee = "no"):
         for i in range(a+1):
             p_w_pity_list.append(p_w(i, weapon_pity))
         
-        if pity == 0:
+        if weapon_pity == 0:
             p_w_list = p_w_pity_list
         else:
             p_w_list = []
@@ -288,7 +293,7 @@ def chance(goal, wishes=0, character_pity=0, weapon_pity=0, guarantee = "no"):
             p_R1_pity_list.append(p_R1(i, weapon_pity))
             
         
-        if pity == 0:
+        if weapon_pity == 0:
             p_R1_list = p_R1_pity_list
         else:
             p_R1_list = []
@@ -426,6 +431,7 @@ while running:
             continue
     
     graph = input("Would you like to see a graph of your chances? (yes/no): ")
+    print("")
     if graph == "":
         running = False
         continue
