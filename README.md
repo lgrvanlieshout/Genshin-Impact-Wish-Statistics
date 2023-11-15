@@ -1,7 +1,7 @@
 # Genshin-Impact-Wish-Statistics
 This program calculates your chances when wishing in Genshin Impact.
 
-How to use: just paste the Genshin wish statistics.py file into your favorite python compiler and hit 'Run'.
+How to use: just paste the Genshin wish system.py file into your favorite python compiler and hit 'Run'.
 
 Some important notes before you get started:
 1. If you want to see a plot of your chances, make sure you have a Python compiler that has the matplotlib module and that it can display plots.
