@@ -344,7 +344,7 @@ noob = True
 
 while running:
     if noob:
-        print("Welcome to this wish chance calculator.The questions you will get "+
+        print("Welcome to this wish chance calculator. The questions you will get "+
               "(if applicable) to calculate your odds, are:\n"+"\n"+
               "goal (any character, any weapon, C0, R1, C4R2, etc.):\n"+
               "number of wishes:\n"+
