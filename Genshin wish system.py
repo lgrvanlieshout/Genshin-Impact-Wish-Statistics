@@ -11,16 +11,14 @@ as paimon.moe, genshin.hotgames.gg, genshin optimizer, etc. and you want to
 add a wishing chance calculating feature to your website.
 
 The mathematical basis of this code is explained in this article on HoYoLab: 
-    ...
+    https://www.hoyolab.com/article/23300795
 
 If you have any questions regarding this program, you can e-mail me on:
     165093adriestarleerling.nl@gmail.com
 
-
 """
 
 import matplotlib.pyplot as plt
-
 
 
 
@@ -91,9 +89,9 @@ def p_w(a, pity=0):
             return 0
         else:
             prod = 1
-            for x in range(pity,a):
-                prod = prod*(1-drop_chance_w[x])
-            return drop_chance_w[a]*prod
+            for x in range(pity, a + pity):
+                prod = prod*(1 - drop_chance_w[x])
+            return drop_chance_w[a+pity]*prod
     if type(a) == range:
         value = []
         for x in range(len(a)):
@@ -101,9 +99,9 @@ def p_w(a, pity=0):
                 value.append(0)
             else:
                 prod = 1
-                for b in range(pity,x):
-                    prod = prod*(1-drop_chance_w[b])
-                value.append(drop_chance_w[x]*prod)
+                for b in range(pity, x + pity):
+                    prod = prod*(1 - drop_chance_w[b])
+                value.append(drop_chance_w[x + pity]*prod)
         return value
     else:
         return 0
